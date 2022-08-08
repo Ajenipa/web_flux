@@ -155,5 +155,5 @@ SITE_ID = 1
 
 #overwrite allauth form
 ACCOUNT_FORMS = {'login':'template_app.forms.WebfluxLoginForm'}
-#ACCOUNT_SIGNUP_FORM_CLASS = 'template_app.signupform.WebfluxSignupForm'
-ACCOUNT_SIGNUP_FORM_CLASS = 'template_app.signupform2.MyCustomSignupForm'
+ACCOUNT_SIGNUP_FORM_CLASS = 'template_app.signupform.WebfluxSignupForm'
+#ACCOUNT_SIGNUP_FORM_CLASS = 'template_app.signupform2.MyCustomSignupForm'
