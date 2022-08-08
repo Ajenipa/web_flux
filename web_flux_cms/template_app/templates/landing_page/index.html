@@ -17,8 +17,12 @@
     </ul>
       
     <ul class="menu">
-      <li><a href="#"><button class="login-btn">Log in</button></a></li>
-      <li><a href="#"><button class="get-started-btn">Get started - FREE</button></a></li>
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'account_logout' %}"><button class="login-btn">Log Out</button></a></li>
+      {% else %}
+      <li><a href="{% url 'account_login' %}"><button class="login-btn">Log in</button></a></li>
+      {% endif %}
+      <li><a href="{% url 'account_signup' %}"><button class="get-started-btn">Get started - FREE</button></a></li>
       <li> <a>
         <select>
           <option>EN</option>
@@ -560,7 +564,8 @@
 </div>
 
 <!-- FOOTER -->
-<div class="footer-main">
+ <!-- FOOTER -->
+ <div class="footer-main">
   <div class="row">
     <div class="col-md-4">
       <h3>LOGO</h3>
@@ -570,15 +575,15 @@
         mollit non deserunt ullamco est sit aliqua dolor do amet sint.
       </p>
       <div class="row" id="get-app">
-        <img src="{% static 'icons/appstore.png' %}" alt="app-store" />
-        <img src="{% static 'icons/googleplay.png' %}" alt="google-play" />
+        <img src="{%static 'icons/appstore.png' %}" alt="app-store" />
+        <img src="{%static 'icons/googleplay.png' %}" alt="google-play" />
       </div>
       <div class="row" id="social-media">
-        <img src="{% static 'icons/twitter.png' %}" alt="twitter" />
-        <img src="{% static 'icons/instagram.png' %}" alt="instagram" />
-        <img src="{% static 'icons/linkedin.png' %}" alt="linkedin" />
-        <img src="{% static 'icons/youtube.png' %}" alt="youtube" />
-        <img src="{% static 'icons/facebook.png' %}" alt="facebook" />
+        <img src="{%static 'icons/twitter.png' %}" alt="twitter" />
+        <img src="{%static 'icons/instagram.png' %}" alt="instagram" />
+        <img src="{%static 'icons/linkedin.png' %}" alt="linkedin" />
+        <img src="{%static 'icons/youtube.png' %}" alt="youtube" />
+        <img src="{%static 'icons/facebook.png' %}" alt="facebook" />
       </div>
     </div>
 

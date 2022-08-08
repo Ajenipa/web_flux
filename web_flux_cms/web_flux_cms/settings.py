@@ -38,10 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'template_app',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount'
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -82,6 +83,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        
     }
 }
 
@@ -151,3 +153,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 SITE_ID = 1
 
+#overwrite allauth form
+ACCOUNT_FORMS = {'login':'template_app.forms.WebfluxLoginForm'}
+#ACCOUNT_SIGNUP_FORM_CLASS = 'template_app.signupform.WebfluxSignupForm'
+ACCOUNT_SIGNUP_FORM_CLASS = 'template_app.signupform2.MyCustomSignupForm'
