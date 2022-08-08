@@ -8,7 +8,7 @@ class WebfluxSignupForm(forms.Form):
     def signup(self, request, user):
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
-       # user.user_email = self.cleaned_data['user_email']
+        #user.user_email = self.cleaned_data['user_email']
         #user.user_password = self.cleaned_data['user_password']
         #user.comfirm_password = self.cleaned_data['comfirm_password']
         user.save()
