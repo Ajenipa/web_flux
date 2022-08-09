@@ -28,6 +28,7 @@
       <div
         class="d-flex justify-content-center align-items-center flex-column mb-5 div"
       >
+      <input type="hidden" name="next" value="{{ request.path }}">
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %} 
         
