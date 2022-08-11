@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import landing_view,template_page_view,signup_prompt_view
+from .views import landing_view,template_page_view,signup_prompt_view,editor_page_view
 
 app_name = 'template_app'
 
@@ -23,4 +23,5 @@ urlpatterns = [
     path('',landing_view, name="landing-page"),
     path('template/',template_page_view, name="template-page"),
     path('signup-prompt/',signup_prompt_view, name="signup-prompt-page"),
+    path('edit/',editor_page_view, name="edit-page"),
 ]

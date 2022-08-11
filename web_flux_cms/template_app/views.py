@@ -13,3 +13,7 @@ def signup_prompt_view(requests):
     context = {
     }
     return render(requests, 'signupprompt/index.html', context=context)
+def editor_page_view(requests):
+    context = {
+    }
+    return render(requests, 'editorpage/edit.html', context=context)
