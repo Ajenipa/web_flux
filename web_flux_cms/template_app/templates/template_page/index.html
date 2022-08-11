@@ -25,13 +25,13 @@
 </head>
 <body>
     <header>
-        <a href="{% static './tp-icon/logo.png' %}" class="logo">LOGO</a>
+        <a href="/" class="logo">LOGO</a>
         <ul class="navigation">
             
-            <li><a href="">Products</i></a></li>
-            <li><a href="">Resources</a></li>
-            <li><a href="">Features</a></li>
-            <li><a href="">Supports</a></li>
+            <li><a href="#">Products</i></a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Supports</a></li>
         </ul>
         <div class="side">
           {% if user.is_authenticated %}
@@ -48,9 +48,9 @@
           </a>
           {% endif %}
           
-            <div class="getstarted-btn">
+           <a href="/edit/"> <div class="getstarted-btn">
                 Get Started
-            </div>
+            </div> </a>
             <div class="country-btn">
                 En
             </div>
