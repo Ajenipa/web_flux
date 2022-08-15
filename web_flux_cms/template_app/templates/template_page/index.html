@@ -15,17 +15,22 @@
     <!--- -->
     <title>Template Page: View Our Templates</title>
     <link rel="stylesheet" href="{% static 'tp-style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1' %}"></script>
+    <!----->
+    <script src="{% static '.https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js' %}"></script>
+    <!----->
     <df-messenger
       intent="WELCOME"
       chat-title="WebFluxBot"
       agent-id="48b3565f-f21f-453f-8481-28c2bdbfbb68"
       language-code="en"
     ></df-messenger> 
+    
 </head>
 <body>
     <header>
-        <a href="/" class="logo">LOGO</a>
+        <a href="/" class="logo"><img src="./dash-image/Vectorlogo.png"/></a>
         <ul class="navigation">
             
             <li><a href="#">Products</i></a></li>
@@ -82,6 +87,14 @@
                 <p class="bold">FASHION</p>
                 <p class="small">Building your fashion website super fast and easy</p>
             </div>
+             <!--popup-->
+        <div class="popup">
+          <div class="pop-b">
+            <p><button class="prev-button">Preview</button></p>
+            <p ><a href="/edit/"><button class="edit-button">Edit</button></a></p>
+          </div>
+        </div>
+        <!---->
             <div class="images">
                 <img src="{% static './tp-image/temtr.png' %}" alt=""> 
                 <p  class="bold">Blog</p>
@@ -142,6 +155,22 @@
         </div>
       </div>
     </div>
-  </div>   
+  </div> 
+  <script>
+    $("div.images").hover(
+      function () {
+          $("div.popup").attr("style", "display:block");
+      },
+      function () {
+          if ($flag == -1) {
+              $("div.popup").attr("style", "display:none");
+          }
+      }
+  );
+  
+  $("div.images").click(function () {
+      $flag = 1;
+  });
+   </script>  
 </body>
 </html>
