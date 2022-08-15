@@ -9,28 +9,30 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rwcfd8p5p@=a!ssy!f_44tm4u&iw4jmu^f*gn1g%%^8s2db9%n'
+#SECRET_KEY = 'django-insecure-rwcfd8p5p@=a!ssy!f_44tm4u&iw4jmu^f*gn1g%%^8s2db9%n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#PORT = os.getenv("PORT", default="5000")
+# SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = False
 
-
+ALLOWED_HOSTS = ["url"]
+#DEBUG = False
+#ALLOWED_HOSTS = [""]
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -159,3 +161,4 @@ ACCOUNT_FORMS = {'login':'template_app.forms.WebfluxLoginForm'}
 ACCOUNT_SIGNUP_FORM_CLASS = 'template_app.signupform.WebfluxSignupForm'
 #ACCOUNT_SIGNUP_FORM_CLASS = 'template_app.signupform2.MyCustomSignupForm'
 #ACCOUNT_FORMS = {'signup': 'template_app.signupform3.MyCustomSignupForm'}
+django_heroku.settings(locals())
